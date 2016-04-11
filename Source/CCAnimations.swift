@@ -1,5 +1,5 @@
 //
-//  CCViewAnimations.swift
+//  CCAnimations.swift
 //  PopAnimation
 //
 //  Created by Carlos Corrêa on 10/04/16.
@@ -78,9 +78,9 @@ extension UIView {
     }
     
     private func setupSpringAnimation(animation:CASpringAnimation,
-                                      damping:CGFloat = 0,
-                                      initialVelocity:CGFloat = 0,
-                                      speed:Float = 0) {
+                                      damping:CGFloat = 1.0,
+                                      initialVelocity:CGFloat = 1.0,
+                                      speed:Float = 1.0) {
         animation.damping = damping
         animation.initialVelocity = initialVelocity
         animation.speed = speed
@@ -119,8 +119,8 @@ extension UIView {
     
     private func scaleAnimation(size:CGFloat, duration:CFTimeInterval) {
         let animation = newAnimation(CASpringAnimation.self, keyPath: .scale)
-        setupSpringAnimation(animation, damping: 7.5, initialVelocity: 1.5, speed:  3.5)
         setupBasicAnimation(animation, duration: duration, toValue:size, reverse:true)
+        setupSpringAnimation(animation, damping: 7.0, initialVelocity: 1.1, speed: 1.7)
         runAnimation(animation)
     }
     
@@ -140,13 +140,13 @@ extension UIView {
         runAnimation(animation)
     }
     
-    private func jumpWithIntensity(withIntensity intensity:CGFloat, damping:CGFloat, initialVelocity:CGFloat, duration:CFTimeInterval, speed:Float) {
+    private func jumpWithIntensity(withIntensity intensity:CGFloat, duration:CFTimeInterval) {
         let currentPoint = self.center
         let fromValue = currentPoint.y
         let toValue = fromValue - intensity
         let animation = newAnimation(CASpringAnimation.self, keyPath: .yPosition)
         setupBasicAnimation(animation, duration: duration, toValue:toValue, reverse:true)
-        setupSpringAnimation(animation, damping:damping, initialVelocity:initialVelocity, speed:speed)
+        setupSpringAnimation(animation, damping: 8.2, initialVelocity: 1.2, speed: 1.1)
         runAnimation(animation)
     }
     
@@ -206,7 +206,7 @@ extension UIView {
      - parameter duration:    The duration of the animation
      - parameter scale: The scale size that the view will resize to (1.0 is the original scale)
      */
-    func CCAnimationPop(duration:CFTimeInterval = 0.4, scale:CGFloat = 1.1) {
+    func CCAnimationPop(duration:CFTimeInterval = 0.3, scale:CGFloat = 1.05) {
         scaleAnimation(scale, duration: duration)
     }
     
@@ -235,8 +235,8 @@ extension UIView {
      - parameter duration: The animation duration
      - parameter intensity: how much the view will be moved in the Y axis.
      */
-    func CCAnimationJump(duration:CFTimeInterval = 0.4, intensity:CGFloat, speed:Float = 1.0) {
-        jumpWithIntensity(withIntensity: intensity, damping: 0, initialVelocity: 0, duration: duration, speed:speed)
+    func CCAnimationJump(duration:CFTimeInterval = 0.3, intensity:CGFloat) {
+        jumpWithIntensity(withIntensity: intensity, duration: duration)
     }
     
     /**
@@ -262,10 +262,9 @@ extension UIView {
      
      - parameter duration: The animation duration
      - parameter intensity: how much the view will be moved in the Y axis.
-     - parameter speed: The animation speed
      */
-    func CCAnimationJumpTwistX(duration:CFTimeInterval = 0.4, intensity:CGFloat, speed:Float = 1.0) {
-        CCAnimationJump(duration, intensity: intensity, speed:speed)
+    func CCAnimationJumpTwistX(duration:CFTimeInterval = 0.4, intensity:CGFloat) {
+        CCAnimationJump(duration, intensity: intensity)
         CCAnimation3DxRotation(duration)
     }
     
@@ -274,10 +273,9 @@ extension UIView {
      
      - parameter duration: The animation duration
      - parameter intensity: how much the view will be moved in the Y axis.
-     - parameter speed: The animation speed
      */
-    func CCAnimationJumpTwistY(duration:CFTimeInterval = 0.4, intensity:CGFloat, speed:Float = 1.0) {
-        CCAnimationJump(duration, intensity: intensity, speed:speed)
+    func CCAnimationJumpTwistY(duration:CFTimeInterval = 0.4, intensity:CGFloat) {
+        CCAnimationJump(duration, intensity: intensity)
         CCAnimation3DyRotation(duration)
     }
     

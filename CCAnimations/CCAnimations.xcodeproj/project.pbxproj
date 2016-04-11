@@ -12,7 +12,7 @@
 		BAE10B4E1CBC2A8F009E9EBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE10B4C1CBC2A8F009E9EBD /* Main.storyboard */; };
 		BAE10B501CBC2A8F009E9EBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAE10B4F1CBC2A8F009E9EBD /* Assets.xcassets */; };
 		BAE10B531CBC2A8F009E9EBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE10B511CBC2A8F009E9EBD /* LaunchScreen.storyboard */; };
-		BAE10B621CBC3607009E9EBD /* CCAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE10B611CBC3607009E9EBD /* CCAnimations.swift */; };
+		BAE10B641CBC378F009E9EBD /* CCAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE10B631CBC378F009E9EBD /* CCAnimations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		BAE10B4F1CBC2A8F009E9EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAE10B521CBC2A8F009E9EBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAE10B541CBC2A8F009E9EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAE10B611CBC3607009E9EBD /* CCAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CCAnimations.swift; path = Source/CCAnimations.swift; sourceTree = SOURCE_ROOT; };
+		BAE10B631CBC378F009E9EBD /* CCAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CCAnimations.swift; path = ../../Source/CCAnimations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 		BAE10B5C1CBC33C7009E9EBD /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				BAE10B611CBC3607009E9EBD /* CCAnimations.swift */,
+				BAE10B631CBC378F009E9EBD /* CCAnimations.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			files = (
 				BAE10B4B1CBC2A8F009E9EBD /* ViewController.swift in Sources */,
 				BAE10B491CBC2A8F009E9EBD /* AppDelegate.swift in Sources */,
-				BAE10B621CBC3607009E9EBD /* CCAnimations.swift in Sources */,
+				BAE10B641CBC378F009E9EBD /* CCAnimations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +300,7 @@
 				BAE10B591CBC2A8F009E9EBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
