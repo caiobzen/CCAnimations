@@ -1,5 +1,5 @@
 //
-//  CCViewAnimations.swift
+//  CCAnimations.swift
 //  PopAnimation
 //
 //  Created by Carlos Corrêa on 10/04/16.
