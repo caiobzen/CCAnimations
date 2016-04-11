@@ -13,9 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var animationsSegment: UISegmentedControl!
     
+    @IBOutlet weak var animateButton: UIButton!
+    @IBOutlet weak var animationTitle: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         imgView.layer.cornerRadius = CGRectGetWidth(imgView.frame) / 2
+        animateButton.layer.cornerRadius = 3.0
+        animationTitle.text = "CCAnimationPop()"
     }
 
     @IBAction func animateButtonTouched(sender: AnyObject) {
@@ -31,15 +35,15 @@ class ViewController: UIViewController {
         case 4:
             imgView.CCAnimation3DyRotation()
         case 5:
-            imgView.CCAnimationJump(intensity: 100)
+            imgView.CCAnimationJump(intensity: 50)
         case 6:
-            imgView.CCAnimationFadeUp(intensity: 100)
+            imgView.CCAnimationFadeUp(3.0, intensity: 200)
         case 7:
-            imgView.CCAnimationFadeDown(intensity: 100)
+            imgView.CCAnimationFadeDown(3.0, intensity: 200)
         case 8:
-            imgView.CCAnimationFadeToLeft(intensity: 100)
+            imgView.CCAnimationFadeToLeft(3.0, intensity: 200)
         case 9:
-            imgView.CCAnimationFadeToRight(intensity: 100)
+            imgView.CCAnimationFadeToRight(3.0, intensity: 200)
         case 10:
             imgView.CCAnimationJumpTwistY(intensity: 100)
         case 11:
@@ -49,5 +53,35 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func segmentDidChanged(sender: AnyObject) {
+        switch animationsSegment.selectedSegmentIndex {
+        case 0:
+            animationTitle.text = "CCAnimationPop()"
+        case 1:
+            animationTitle.text = "CCAnimationShake()"
+        case 2:
+            animationTitle.text = "CCAnimationRotate()"
+        case 3:
+            animationTitle.text = "CCAnimation3DxRotation()"
+        case 4:
+            animationTitle.text = "CCAnimation3DyRotation()"
+        case 5:
+            animationTitle.text = "CCAnimationJump()"
+        case 6:
+            animationTitle.text = "CCAnimationFadeUp()"
+        case 7:
+            animationTitle.text = "CCAnimationFadeDown()"
+        case 8:
+            animationTitle.text = "CCAnimationFadeToLeft()"
+        case 9:
+            animationTitle.text = "CCAnimationFadeToRight()"
+        case 10:
+            animationTitle.text = "CCAnimationJumpTwistY()"
+        case 11:
+            animationTitle.text = "CCAnimationJumpTwistX()"
+        default:
+            break
+        }
+    }
 }
 

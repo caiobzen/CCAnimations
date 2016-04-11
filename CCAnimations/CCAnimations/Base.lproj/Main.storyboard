@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgU-N8-IJL">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgU-N8-IJL">
                                 <rect key="frame" x="255" y="275" width="91" height="50"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -32,10 +32,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heman" translatesAutoresizingMaskIntoConstraints="NO" id="spK-Mv-zeD">
-                                <rect key="frame" x="250" y="126" width="100" height="100"/>
+                                <rect key="frame" x="200" y="35" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="PNF-dm-ipP"/>
-                                    <constraint firstAttribute="height" constant="100" id="WO7-EE-BLS"/>
+                                    <constraint firstAttribute="width" constant="200" id="PNF-dm-ipP"/>
+                                    <constraint firstAttribute="height" constant="200" id="WO7-EE-BLS"/>
                                 </constraints>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P4L-Qc-457">
@@ -59,19 +59,37 @@
                                     <segment title="12"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentDidChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="JB6-g3-O1C"/>
+                                </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6o-yF-VyK">
+                                <rect key="frame" x="150" y="507" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="LsV-2G-Pbr"/>
+                                    <constraint firstAttribute="height" constant="21" id="Z1P-Ie-pdi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93657483552631504" green="0.95487253289473684" blue="0.93767989309210531" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="P4L-Qc-457" firstAttribute="top" secondItem="F6o-yF-VyK" secondAttribute="bottom" constant="8" id="469-Ff-1sP"/>
                             <constraint firstItem="kgU-N8-IJL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BHH-j4-xOn"/>
                             <constraint firstItem="P4L-Qc-457" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Orr-8l-LhD"/>
                             <constraint firstItem="spK-Mv-zeD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S6l-4Y-VPH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="P4L-Qc-457" secondAttribute="bottom" constant="36" id="aAX-Sv-bI4"/>
-                            <constraint firstItem="kgU-N8-IJL" firstAttribute="top" secondItem="spK-Mv-zeD" secondAttribute="bottom" constant="49" id="pak-29-yG1"/>
+                            <constraint firstItem="F6o-yF-VyK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cHa-h5-pUg"/>
+                            <constraint firstItem="kgU-N8-IJL" firstAttribute="top" secondItem="spK-Mv-zeD" secondAttribute="bottom" constant="40" id="pak-29-yG1"/>
                             <constraint firstItem="kgU-N8-IJL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qR4-cL-xgo"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="animateButton" destination="kgU-N8-IJL" id="XLI-Ll-MS1"/>
+                        <outlet property="animationTitle" destination="F6o-yF-VyK" id="iSD-Zc-ugD"/>
                         <outlet property="animationsSegment" destination="P4L-Qc-457" id="kdc-Eo-4g4"/>
                         <outlet property="imgView" destination="spK-Mv-zeD" id="bi2-s6-gBW"/>
                     </connections>
